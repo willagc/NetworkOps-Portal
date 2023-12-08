@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Linux Automation</title>
+</head>
+<body>
+    <h1>Linux Automation</h1>
+    <form action="/run_linux_command_key" method="post">
+        <label for="linux_device_ip">Linux Device IP:</label>
+        <input type="text" name="linux_device_ip" required><br>
+
+        <label for="linux_username">Username:</label>
+        <input type="text" name="linux_username" required><br>
+
+        <label for="linux_key_file">SSH Key File:</label>
+        <input type="text" name="linux_key_file" required><br>
+
+        <label for="linux_command">Linux Command:</label>
+        <input type="text" name="linux_command" required><br>
+
+        <input type="submit" value="Run Linux Command">
+    </form>
+</body>
+</html>
