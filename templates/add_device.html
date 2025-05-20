@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Device</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="max-w-md mx-auto mt-10 p-6 bg-white rounded shadow space-y-4">
+        <h1 class="text-2xl font-bold mb-4 text-center">Add a New Device</h1>
+        <form method="POST">
+            <label class="block">Device Name:</label>
+            <input name="name" class="w-full mb-2 border rounded px-3 py-2" required>
+
+            <label class="block">IP Address:</label>
+            <input name="ip" class="w-full mb-2 border rounded px-3 py-2" required>
+
+            <label class="block">Username:</label>
+            <input name="username" class="w-full mb-2 border rounded px-3 py-2" required>
+
+            <label class="block">SSH Key Path:</label>
+            <input name="key_path" class="w-full mb-2 border rounded px-3 py-2" required>
+
+            <label class="block">Device Type (e.g., cisco_ios, vyos):</label>
+            <input name="device_type" class="w-full mb-4 border rounded px-3 py-2" required>
+
+            <button class="w-full bg-blue-600 text-white py-2 px-4 rounded">Add Device</button>
+        </form>
+
+        <div class="text-center mt-6">
+            <a href="{{ url_for('list_devices') }}" class="text-gray-600 underline">⬅️ Back to device list</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Supported Device Types</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+  <div class="max-w-2xl mx-auto mt-10 p-6 bg-white rounded shadow space-y-4">
+    <h1 class="text-2xl font-bold text-center">Supported Device Types (Netmiko)</h1>
+    <table class="w-full table-auto border mt-4">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="border px-4 py-2">Platform</th>
+          <th class="border px-4 py-2">Device Type</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="border px-4 py-2">Cisco IOS</td><td class="border px-4 py-2">cisco_ios</td></tr>
+        <tr><td class="border px-4 py-2">Cisco NX-OS</td><td class="border px-4 py-2">cisco_nxos</td></tr>
+        <tr><td class="border px-4 py-2">VyOS</td><td class="border px-4 py-2">vyos</td></tr>
+        <tr><td class="border px-4 py-2">Linux SSH</td><td class="border px-4 py-2">linux</td></tr>
+        <tr><td class="border px-4 py-2">Juniper Junos</td><td class="border px-4 py-2">juniper</td></tr>
+        <!-- Add more from Netmiko as needed -->
+      </tbody>
+    </table>
+
+    <div class="text-center mt-6">
+      <a href="{{ url_for('index') }}" class="text-gray-600 underline">⬅️ Back to dashboard</a>
+    </div>
+  </div>
+</body>
+</html>
