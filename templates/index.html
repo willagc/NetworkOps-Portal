@@ -1,43 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>NetProxy</title>
+    <title>Rodent Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100">
-    <div class="max-w-md mx-auto mt-10 p-6 bg-white rounded shadow space-y-4">
-        <h1 class="text-2xl font-bold mb-4 text-center text-blue-700">NetProxy</h1>
-        
-        <form action="/run_linux_command_key" method="post">
-            <div>
-                <label for="linux_device_ip" class="block font-semibold mb-1">Linux Device IP:</label>
-                <input type="text" name="linux_device_ip" required
-                    class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
-            </div>
-        
-            <div>
-                <label for="linux_username" class="block font-semibold mb-1">Username:</label>
-                <input type="text" name="linux_username" required
-                    class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
-            </div>
-        
-            <div>
-                <label for="linux_key_file" class="block font-semibold mb-1">SSH Key File:</label>
-                <input type="text" name="linux_key_file" required
-                    class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
-            </div>
-        
-            <div>
-                <label for="linux_command" class="block font-semibold mb-1">Linux Command:</label>
-                <input type="text" name="linux_command" required
-                    class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
-            </div>
-        
-            <button type="submit"
-                class="w-full mt-4 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                Run Linux Command
-            </button>
-        </form>
+    <div class="max-w-xl mx-auto mt-20 bg-white p-8 rounded shadow text-center space-y-6">
+        <h1 class="text-3xl font-bold text-blue-600">Welcome to NetProxy</h1>
+        <p class="text-gray-700">Manage and automate network device access with control and audit.</p>
+
+        <div class="space-y-3">
+            <a href="{{ url_for('add_device') }}" class="block bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700">➕ Add Device</a>
+            <a href="{{ url_for('list_devices') }}" class="block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">📋 View Devices</a>
+            <a href="{{ url_for('run_command') }}" class="block bg-purple-600 text-white py-2 px-4 rounded hover:bg-purple-700">⚙️ Run Command</a>
+        </div>
     </div>
 </body>
 </html>

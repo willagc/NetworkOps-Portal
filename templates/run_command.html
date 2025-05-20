@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Run Command</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="max-w-md mx-auto mt-10 p-6 bg-white rounded shadow space-y-4">
+        <h1 class="text-xl font-bold text-center mb-4">Run Command on Device</h1>
+        <form method="POST">
+            <label class="block">Select Device:</label>
+            <select name="device_id" class="w-full border rounded px-3 py-2 mb-4" required>
+                {% for device in devices %}
+                <option value="{{ device.id }}">{{ device.name }} ({{ device.ip }})</option>
+                {% endfor %}
+            </select>
+
+            <label class="block">Command:</label>
+            <input name="command" class="w-full border rounded px-3 py-2 mb-4" required>
+
+            <button class="w-full bg-blue-600 text-white py-2 px-4 rounded">Execute</button>
+        </form>
+
+        {% if output %}
+        <div class="mt-6 bg-gray-200 p-4 rounded font-mono text-sm whitespace-pre-wrap">
+            <strong>Output:</strong>
+            <pre>{{ output }}</pre>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

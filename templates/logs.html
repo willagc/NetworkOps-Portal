@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Command Logs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+  <div class="max-w-5xl mx-auto mt-10 p-6 bg-white rounded shadow">
+    <h1 class="text-2xl font-bold text-center mb-6">Command Logs</h1>
+    <table class="table-auto w-full border text-sm">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="px-4 py-2 border">Timestamp</th>
+          <th class="px-4 py-2 border">User</th>
+          <th class="px-4 py-2 border">Device</th>
+          <th class="px-4 py-2 border">Command</th>
+          <th class="px-4 py-2 border">Output</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for log in logs %}
+        <tr>
+          <td class="px-4 py-2 border">{{ log.timestamp }}</td>
+          <td class="px-4 py-2 border">{{ log.user.username }}</td>
+          <td class="px-4 py-2 border">{{ log.device.name }}</td>
+          <td class="px-4 py-2 border font-mono">{{ log.command }}</td>
+          <td class="px-4 py-2 border whitespace-pre-wrap">{{ log.output[:100] }}...</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <div class="text-center mt-6">
+      <a href="{{ url_for('index') }}" class="text-blue-600 underline">⬅️ Back to dashboard</a>
+    </div>
+  </div>
+</body>
+</html>
